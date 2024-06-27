@@ -1,0 +1,50 @@
+.main {
+  width: 95%;
+  height: 90vh;
+  border-radius: 0.2rem;
+  border: 1px solid gainsboro;
+  margin: auto;
+  margin-bottom: 4rem;
+  padding: 0.5rem;
+  position: relative;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://img.freepik.com/free-photo/arrangement-black-friday-shopping-carts-with-copy-space_23-2148667047.jpg?size=626&ext=jpg&ga=GA1.1.1141335507.1719360000&semt=ais_user");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: whitesmoke;
+}
+
+.content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.content p {
+  font-size: 3rem;
+}
+
+.content span {
+  color: gray;
+}
+
+.content button {
+  cursor: pointer;
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  width: fit-content;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 1.5rem;
+}
+
+.content button:hover {
+  background-color: aliceblue;
+}

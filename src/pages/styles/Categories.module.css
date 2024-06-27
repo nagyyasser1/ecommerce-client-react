@@ -1,0 +1,23 @@
+.categories {
+  width: 95%;
+  padding: 2rem 1rem;
+  margin: auto;
+  margin-bottom: 4rem;
+  background-color: #333;
+  border-radius: 0.2rem;
+}
+
+.categories_header {
+  text-align: center;
+  color: whitesmoke;
+}
+
+.categories_header p {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.categories_header span {
+  color: gainsboro;
+  line-height: 2rem;
+}

@@ -1,0 +1,9 @@
+export { default as Header } from "./Header/Header";
+export { default as Main } from "./Main/Main";
+export { default as Sidebar } from "./Sidebar/Sidebar";
+export { default as About } from "./About/About";
+export { default as Footer } from "./Footer/Footer";
+export { default as ProductCard } from "./ProductCard/ProductCard";
+export { default as ProductList } from "./ProductList/ProductList";
+export { default as CategoryCard } from "./CategoryCard/CategoryCard";
+export { default as CategoryList } from "./CategoryList/CategoryList";
