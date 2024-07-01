@@ -2,16 +2,18 @@ import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useAuth } from "../contexts/AuthContext";
 import { login } from "../services/api";
-import styles from "./styles/Login.module.css";
+import styles from "./styles/Register.module.css";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 
 interface LoginFormInputs {
+  full_name: string;
+  phone: number;
   email: string;
   password: string;
 }
 
-const Login: React.FC = () => {
+const Register: React.FC = () => {
   const { login: setUser } = useAuth();
   const {
     register,
@@ -33,10 +35,40 @@ const Login: React.FC = () => {
     <div className={styles.login}>
       <div className={styles.form_container}>
         <div className={styles.form_heading}>
-          <p className={styles.title}>WELCOME BACK!</p>
-          <span>Access your personal account by logging in.</span>
+          <p className={styles.title}>WELCOME TO KAREZMA</p>
+          <span>Create your personal account by signing up.</span>
         </div>
         <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+          <div className={styles.field}>
+            <label className={styles.label}>
+              Full Name:
+              <input
+                type="text"
+                {...register("full_name", {
+                  required: "full name is required",
+                })}
+                className={styles.input}
+              />
+            </label>
+            {errors.full_name && (
+              <p className={styles.error}>{errors.full_name.message}</p>
+            )}
+          </div>
+          <div className={styles.field}>
+            <label className={styles.label}>
+              Phone:
+              <input
+                type="text"
+                {...register("phone", {
+                  required: "phone name is required",
+                })}
+                className={styles.input}
+              />
+            </label>
+            {errors.phone && (
+              <p className={styles.error}>{errors.phone.message}</p>
+            )}
+          </div>
           <div className={styles.field}>
             <label className={styles.label}>
               Email:
@@ -65,14 +97,14 @@ const Login: React.FC = () => {
           </div>
           {error && <p className={styles.error}>{error}</p>}
           <button type="submit" className={styles.button}>
-            Log In
+            Register
           </button>
           <button type="button" className={styles.google_button}>
             <FcGoogle />
             <p>Sign In With Google</p>
           </button>
-          <div className={styles.register_link}>
-            Don't have account? <Link to="/register">Register</Link>
+          <div className={styles.login_link}>
+            Aready have an account? <Link to="/login">Log In</Link>
           </div>
         </form>
       </div>
@@ -80,4 +112,4 @@ const Login: React.FC = () => {
   );
 };
 
-export default Login;
+export default Register;

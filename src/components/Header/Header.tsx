@@ -53,13 +53,18 @@ const Header = () => {
         <div className={styles.center}>
           <RiMenuFill className={styles.menu_icon} onClick={handleMenuToggle} />
           <Link to="/" className={styles.brand}>
-            <span>K</span>arezma
+            KAREZMA
           </Link>
         </div>
         <div className={styles.right}>
-          <Link to="/cart" className={styles.link}>
-            <IoBagOutline /> <span>{cart.length}</span>
-          </Link>
+          <div>
+            <Link to="/cart" className={styles.link}>
+              <IoBagOutline className={styles.cart_icon} />{" "}
+              <span className={styles.cart_count}>
+                {cart.length > 0 && cart.length}
+              </span>
+            </Link>
+          </div>
           {user ? (
             <>
               <span className={styles.user}>Hello, {user.name}</span>
@@ -69,7 +74,7 @@ const Header = () => {
             </>
           ) : (
             <Link to="/login" className={styles.link}>
-              Login
+              LOGIN
             </Link>
           )}
         </div>

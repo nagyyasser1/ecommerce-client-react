@@ -23,6 +23,7 @@ const products: Product[] = [
     ],
     page_title: "",
     meta_description: "",
+    variants: [],
   },
   {
     id: "2",
@@ -44,6 +45,7 @@ const products: Product[] = [
     ],
     page_title: "",
     meta_description: "",
+    variants: [],
   },
   {
     id: "3",
@@ -65,6 +67,7 @@ const products: Product[] = [
     ],
     page_title: "",
     meta_description: "",
+    variants: [],
   },
   {
     id: "4",
@@ -86,6 +89,7 @@ const products: Product[] = [
     ],
     page_title: "",
     meta_description: "",
+    variants: [],
   },
 ];
 

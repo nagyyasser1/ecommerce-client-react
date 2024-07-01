@@ -1,9 +1,15 @@
-import React, { createContext, useContext, useState } from "react";
-import { Product } from "../types";
+import React, { createContext, useContext, useState, useEffect } from "react";
+import { Product, Variant } from "../types";
+
+interface CartItem {
+  product: Product;
+  variant: Variant;
+}
 
 interface CartContextType {
-  cart: Product[];
-  addToCart: (product: Product) => void;
+  cart: CartItem[];
+  total: number;
+  addToCart: (cartItem: CartItem) => void;
   removeFromCart: (id: string) => void;
 }
 
@@ -12,18 +18,29 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export const CartProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const [cart, setCart] = useState<Product[]>([]);
+  const [cart, setCart] = useState<CartItem[]>([]);
+  const [total, setTotal] = useState(0);
 
-  const addToCart = (product: Product) => {
-    setCart((prevCart) => [...prevCart, product]);
+  useEffect(() => {
+    const newTotal = cart.reduce(
+      (acc, item) => acc + item.product.price * item.variant.count,
+      0
+    );
+    setTotal(newTotal);
+  }, [cart]);
+
+  const addToCart = (cartItem: CartItem) => {
+    setCart((prevCart) => [...prevCart, cartItem]);
   };
 
   const removeFromCart = (id: string) => {
-    setCart((prevCart) => prevCart.filter((product) => product.id !== id));
+    setCart((prevCart) =>
+      prevCart.filter((cartItem) => cartItem.product.id !== id)
+    );
   };
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart, total }}>
       {children}
     </CartContext.Provider>
   );

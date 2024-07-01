@@ -1,0 +1,119 @@
+.productDetails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 95%;
+  margin: auto;
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+  margin-top: 50px;
+}
+
+.imageGallery {
+  flex: 1 1 400px;
+}
+
+.mainImage img {
+  width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.thumbnails img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 0.5rem;
+}
+
+.thumbnails img.activeThumbnail {
+  border: 2px solid #000;
+}
+
+.details {
+  flex: 1 1 400px;
+}
+
+.details h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.details p {
+  margin: 5px 0;
+}
+
+.price {
+  color: green;
+  font-weight: bold;
+}
+
+.oldPrice {
+  color: red;
+  text-decoration: line-through;
+}
+
+.variants {
+  margin-top: 20px;
+  display: flex;
+  gap: 1rem;
+}
+
+.variant {
+  margin-bottom: 10px;
+}
+
+.variantsForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup label {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.selectInput,
+.numberInput {
+  padding: 0.3rem;
+  font-size: 1rem;
+  border-radius: 4px;
+}
+
+.addToCartButton_container {
+  text-align: right;
+}
+
+.addToCartButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #333;
+  color: white;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  margin-top: 10px;
+  align-self: flex-start;
+  transition: 0.3s ease-in-out;
+  border: none;
+}
+
+.addToCartButton:hover {
+  color: white;
+  background-color: #272626;
+}

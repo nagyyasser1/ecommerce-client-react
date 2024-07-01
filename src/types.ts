@@ -23,5 +23,5 @@ export type Product = {
   category: Category;
   tags: string[];
   images: string[];
-  variants?: Variant[];
+  variants: Variant[];
 };

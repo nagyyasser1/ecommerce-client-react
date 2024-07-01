@@ -1,6 +1,6 @@
 .footer {
   background-color: #282c34;
-  color: white;
+  color: gray;
   text-align: left;
   padding: 1rem;
   position: relative;
@@ -17,4 +17,10 @@
 .content {
   display: flex;
   gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    justify-content: center;
+  }
 }
